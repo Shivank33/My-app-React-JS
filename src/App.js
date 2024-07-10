@@ -25,12 +25,18 @@ function App() {
       document.body.style.backgroundColor = '#042743';
       setToggleBtn('Enable light mode');
       showAlert("Dark mode has been enabled" , "success")
+
+      // To change title dynamically
+      // document.title = 'My-app Dark Mode'
     }
     else{
       setMode('light');
       document.body.style.backgroundColor = 'white';
       setToggleBtn('Enable dark mode');
       showAlert("Light mode has been enabled" , "success")
+
+      // To change title dynamically
+      // document.title = 'My-app Light Mode'
     }
   }
   return (
