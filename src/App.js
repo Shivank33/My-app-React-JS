@@ -54,7 +54,7 @@ function App() {
     <div className="container my-3">
       <Routes>
             <Route exact path="/about" element={<About mode={mode} />}/> 
-            <Route exact path="/" element={<TextForm heading = "Enter the text to analyze below" mode={mode} showAlert = {showAlert} />} />   
+            <Route exact path="/My-app-React-JS" element={<TextForm heading = "Enter the text to analyze below" mode={mode} showAlert = {showAlert} />} />   
       </Routes>
     </div>
     </Router>
