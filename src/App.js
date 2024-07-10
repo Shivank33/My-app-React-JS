@@ -1,9 +1,16 @@
 import './App.css';
-// import About from './components/About';
+import About from './components/About';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import { useState } from 'react';
+// import { createRoot } from "react-dom/client";
+import {
+  BrowserRouter as Router,
+  Route, 
+  Routes
+} from "react-router-dom";
+
 function App() {
   const [mode , setMode] = useState('light');
   const [toggleBtn , setToggleBtn] = useState('Enable dark mode');
@@ -41,12 +48,16 @@ function App() {
   }
   return (
     <>
+    <Router>
     <Navbar title = "My App" mode = {mode} toggleMode = {toggleMode} toggleBtn = {toggleBtn}/>
     <Alert alert ={alert}/>
     <div className="container my-3">
-      {/* <About /> */}
-      <TextForm heading = "Enter the text to analyze below" mode={mode} showAlert = {showAlert} />
+      <Routes>
+            <Route exact path="/about" element={<About mode={mode} />}/> 
+            <Route exact path="/" element={<TextForm heading = "Enter the text to analyze below" mode={mode} showAlert = {showAlert} />} />   
+      </Routes>
     </div>
+    </Router>
     </>
   );
 }

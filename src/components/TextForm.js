@@ -6,17 +6,17 @@ function TextForm(props) {
     // text = "new text";  // wrong way
     // setText("new text");  // correct way to change state.
     const handleUpClick = () => {
-        console.log("UpperCase was clicked...");
+        // console.log("UpperCase was clicked...");
         setText(text.toUpperCase());
         props.showAlert("Converted to Uppercase" , "success");
     }
     const handleDownClick = () => {
-        console.log("LowerCase was clicked...");
+        // console.log("LowerCase was clicked...");
         setText(text.toLowerCase());
         props.showAlert("Converted to Lowercase" , "success");
     }
     const handleOnChange = (event) => {
-        console.log("On Change clicked");
+        // console.log("On Change clicked");
         setText(event.target.value);
         // we can update value using above line.
     }
