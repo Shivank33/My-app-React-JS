@@ -4,7 +4,7 @@ import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import { useState } from 'react';
-// import { createRoot } from "react-dom/client";
+
 import {
   BrowserRouter as Router,
   Route, 
