@@ -28,7 +28,7 @@ function About() {
     return (
         <>
         <div className='container text-center'>
-            <h1 className='my-3 text-primary'>About Us</h1>
+            <h1 className='my-3 text-info'>About Us</h1>
             <div className="container border border-info border-3 rounded-5 p-3 mb-3" style={myStyle}>
                 <h3>This is free app which allows you many functions on text like -</h3>
                 <h4>* Convert to Uppercase</h4>

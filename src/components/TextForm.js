@@ -6,17 +6,14 @@ function TextForm(props) {
     // text = "new text";  // wrong way
     // setText("new text");  // correct way to change state.
     const handleUpClick = () => {
-        // console.log("UpperCase was clicked...");
         setText(text.toUpperCase());
         props.showAlert("Converted to Uppercase" , "success");
     }
     const handleDownClick = () => {
-        // console.log("LowerCase was clicked...");
         setText(text.toLowerCase());
         props.showAlert("Converted to Lowercase" , "success");
     }
     const handleOnChange = (event) => {
-        // console.log("On Change clicked");
         setText(event.target.value);
         // we can update value using above line.
     }
@@ -28,9 +25,7 @@ function TextForm(props) {
         }
     }
     const copyText = ()=>{
-        var text = document.getElementById('myBox');
-        text.select();
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(text);
         props.showAlert("Text Copied" , "success");
     }
     const removeSpaces = ()=>{
@@ -60,8 +55,8 @@ function TextForm(props) {
         </div>
         <div className="container my-3" style={{color: props.mode === 'dark' ? 'white' : '#042743'}}>
             <h2>Text Summary</h2>
-            <p>{text.split(" ").filter((word) => word !== "").length} words and {text.length} characters</p>
-            <p>{text.split(" ").filter((word) => word !== "").length * 0.008} minutes to read</p>
+            <p>{text.split(/\s+/).filter((word) => word !== "").length} words and {text.length} characters</p>
+            <p>{text.split(/\s+/).filter((word) => word !== "").length * 0.008} minutes to read</p>
             {/* 0.008 minutes to read one word. */}
             <h2>Preview</h2>
             <p>{text.length > 0 ? text : "Enter your text in textbox to preview here"}</p>
